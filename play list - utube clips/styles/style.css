@@ -1,0 +1,125 @@
+html, body{
+    font-size: large;
+    text-align: center;
+    /*background-color: #f8f9fa;*/
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #86847f;
+}
+
+
+header{
+    font-family: 'Nosifer', cursive;
+    background-image: url("../assets/pic/movie1280.png") ;
+    background-size: 100% 100%;
+    height: 250px;
+    background-color: #77736bb0;
+}
+
+#mainheaderh1{
+    padding-top: 50px;
+
+}
+
+.breadcrumb{
+    width: 80%;
+    margin-left: 130px;
+    background-color: #191a1b;
+    color:white;
+    font-family: oldishEnglish;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.breadcrumb-item.active{
+    color: #e41010;
+}
+
+.navbar-nav{
+    display: inline-block;
+}
+
+.headerFirstWord{
+    font-size: 23px;
+    display: inline-block;
+    color: red;
+}
+
+
+.serchBox{
+    text-align: center;
+    width: 200px;
+    margin-top: -5px;
+    margin-left: 100px;
+}
+
+
+.secondPic{
+    background-image: url("../assets/pic/abstract1280.png") ;
+    background-size: 100% 100%;
+    height: 140px;
+    margin-top: -71px;
+    margin-bottom: -50px;
+}
+
+
+.jumbotron{
+    background-image: linear-gradient(#86847f,#575757);
+
+}
+
+
+footer{
+    padding: 10px;
+    margin-top: -20px;
+    font-family: oldishEnglish;
+}
+
+
+.fa-youtube{
+    color: red;
+
+}
+
+
+.hideTableVideoId{
+    display: none;
+    visibility:hidden;
+}
+
+
+@font-face {
+    font-family: oldishEnglish;
+    src: url("../assets/fonts/IMFeENit29P.ttf");
+}
+
+
+#registerErrorMessage{
+    color: red;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+
+.video-container{
+    display: flex;
+    top: 600px;;
+    left: 0 auto;
+    margin-top: 20px;
+    padding: 0 auto;
+    width: 100%;
+}
+
+.overlay{
+    background-color: red;
+    position:absolute;
+    top: 250px;;
+    left: 0 auto;
+    margin: 0 auto;
+    padding: 0 auto;
+    width: 100%;
+
+}
