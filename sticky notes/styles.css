@@ -1,0 +1,121 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("/assets/pic/background-brick-bricks.jpg");
+    background-size: 100% 100%;
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+    text-transform: capitalize;
+}
+
+.main-container {
+    background-image: url("/assets/pic/pinboard.png");
+    height: 500px;
+    background-size: 100% 100%;
+}
+
+.main-title {
+    height: 250px;
+    margin-top: 4%;
+    margin-right: 100px;
+}
+
+.main-paper {
+    background-image: url("/assets/pic/art-white.jpg");
+    height: 400px;
+    background-size: 60% 60%;
+    background-repeat: no-repeat;
+    background-position-x: 100px;
+    background-position-y: 140px;
+    margin-left: 20%;
+    margin-top: -24%;
+}
+
+.myForm {
+    position: absolute;
+    left: 100px;
+    width: 30px;
+    width: 50%;
+    margin-left: -1%;
+    margin-top: 22%;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.btn {
+    width: 35%;
+}
+
+.note {
+    background-image: url("/assets/pic/note.png");
+    width: 300px;
+    height: 300px;
+    float: left;
+    background-size: 300px 300px;
+    display: none;
+    animation-name: fadeEffect;
+    animation-duration: 1s; 
+}
+
+.thumbtack {
+    width: 50px;
+    margin-right: 3%;
+    margin-top: 3%;
+}
+
+
+
+
+.fa-trash-o {
+    color: red;
+    font-family: FontAwesome;
+    display: none;
+}
+
+.note:hover .fa-trash-o {
+    width: 50px;
+    height: 50px;
+    margin-left: 80%;
+    margin-top: -15%;
+    display: block;
+}
+
+span.icon {
+    font-family: FontAwesome;
+}
+
+.textArea {
+    width: 240px;
+    height: 180px;
+    margin: 0 auto;
+    overflow: auto;
+    text-align: justify;
+    
+}
+
+
+.note:hover .textArea{
+    margin-top: -1.7%;
+}
+
+
+ .date {
+    margin-right: 100px;
+}
+
+
+@keyframes fadeEffect {
+    0% {opacity: 0.1} 
+    10% {opacity: 0.2}
+    20% {opacity: 0.3}
+    30% {opacity:0.4}
+    40% {opacity:0.5}
+    50% {opacity:0.6}
+    60% {opacity:0.7}
+    70% {opacity:0.8}
+    80% {opacity:0.9}
+    90% {opacity:0.95}
+    100% {opacity:1}
+}
