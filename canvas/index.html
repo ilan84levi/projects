@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+
+<body onload="timer()">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <header>
+                    <h1 id="headerMain">Input radius value and get the volume of a sphhere</h1>
+                </header>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="container">
+
+            <div class="row">
+                <div class="getDataDiv col-5">
+                    <form action="">
+                        <div class="form-group">
+                            <label>radius</label>
+                            <input type="text" class="form-control" id="radiusBox" placeholder="radius">
+                        </div>
+                    </form>
+                    <label>volume is:</label>
+                    <span id="volume"></span>
+                    <br>
+                    <button onclick="showVolume()" class="btn-primary">calculate</button>
+                    <button onclick="clearCanvas()" class="btn-success">clear canvas</button>
+                </div>
+                <div class="displayOnCanvas col-5">
+                    <canvas id="myCanvas" width="400px" height="400px"></canvas>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>
