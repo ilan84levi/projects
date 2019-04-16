@@ -1,0 +1,39 @@
+<h1>ADD TASK</h1>
+
+<!-- <hr> -->
+<div class="myForm">
+  <form class="form-group" #form="ngForm">
+    <div>
+      <!-- <input type="text" value="{{task.task}}"> -->
+      <input #taskValidate="ngModel" required minlength="3" class="form-control" type="text" name="task"
+        placeholder="task..." [(ngModel)]="task.task">
+    </div>
+
+    <span *ngIf="taskValidate.errors?.required && taskValidate.touched">Missing Task.</span>
+    <span *ngIf="taskValidate.errors?.minlength && taskValidate.touched">Task name too short.</span>
+    
+    <div>
+      <input #dateValidate="ngModel" required class="form-control" type="date" name="date" placeholder="date..."
+        [(ngModel)]="task.date">
+      <span *ngIf="dateValidate.errors?.invalid && dateValidate.touched">Missing date.</span>
+    </div>
+
+    <div [class.has-error]="familyMemberValidate.touched && familyMemberValidate.invalid">
+     
+        <select #familyMemberValidate="ngModel" required class="form-control" aria-placeholder="family member"
+        name="familyMember" [(ngModel)]="task.familyMember">
+        <option value="-1">please select family member</option>
+        <option *ngFor="let f of family" value="{{f._id}}">{{f.name}}</option> -->
+      </select>
+      
+      <span class="help" *ngIf="familyMemberValidate.errors?.invalid && familyMemberValidate.touched ">Missing .</span>
+   
+    </div>
+    
+    <button [disabled]="form.form.invalid" type="submit" class="btn btn-primary" (click)="addAsignment()">ADD
+      TASK</button>
+
+  </form>
+</div>
+
+

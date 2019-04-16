@@ -1,0 +1,28 @@
+<h1>HOME TASKS MANAGMENT</h1>
+
+<div  *ngIf=" loading " >
+
+  <table class="table" *ngIf="tasks">
+    <thead>
+      <tr>
+
+        <th scope="col">task</th>
+        <th scope="col">date</th>
+        <th scope="col">familyMember</th>
+        <th scope="col">delete</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of tasks">
+
+        <td>{{t.task}}</td>
+        <td>{{t.date}}</td>
+        <td>{{t.familyMember.name}} - {{t.familyMember.discription}}</td>
+        <td (click)="deleteTask(t._id)"><button class="btn btn-danger">delete</button></td>
+
+      </tr>
+    </tbody>
+  </table>
+
+</div>

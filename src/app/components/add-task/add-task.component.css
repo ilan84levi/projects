@@ -1,0 +1,23 @@
+.form-control[_ngcontent-c3]{
+    margin: auto;
+    width: 400px;
+    border: 1px solid blue !important;
+}
+
+.myForm{
+    width: 400px;
+    margin: auto;
+    border: 3px solid #b1ad5c !important;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #b1ad5c;
+}
+
+button {
+    margin-top: 5px;
+    width:200px;
+}
+
+input , select{
+    margin: 5px;  
+}

@@ -1,0 +1,22 @@
+
+
+table{
+    margin: auto;
+    width: 50%;
+    background-color: burlywood;
+}
+
+td, tr, th{
+    /* border: 1px solid black; */
+    text-align: center;
+    border-bottom: none;
+}
+
+.hide{
+    display: none;
+}
+
+.table>thead>tr>th {
+    /* vertical-align: bottom; */
+    border-bottom: none;
+}

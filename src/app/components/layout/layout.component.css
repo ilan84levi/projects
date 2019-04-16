@@ -1,0 +1,32 @@
+section {
+    height: 100%;
+    /* border: 2px solid black; */
+    background-color: lightgreen;
+    text-align: center;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 20% 73% 7%;
+}
+
+section > * {
+     /* border: 2px solid black; */
+     }
+
+header, footer { grid-column: span 12 }
+
+
+main {
+    height: 100%;
+    grid-column: span 12;
+    overflow: auto;
+    background-color:#ead08f
+}
+
+header{
+    background-color: goldenrod;
+}
+
+footer{
+    background-color: goldenrod;
+}
