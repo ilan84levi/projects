@@ -1,0 +1,118 @@
+<div class="container-fluid all-container">
+
+  <div class="row">
+
+    <div class="col-xs-5 col-sm-6 col">
+
+      <h5>myCart - Total Price: {{totalPrice | currency}}</h5>
+
+    </div>
+
+    <div class="col-xs-5 col-sm-6 col ">
+
+      <h5>Shipping Details:</h5>
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col col-xs-4 col-sm-4 col-lg-6 myCart">
+
+      <div class="cartItems itemsContainer">
+
+        <div *ngFor="let item of items">
+
+          <div class="item ">
+
+            <img src="assets/images/{{item.productId.productImage}}" alt="" class="productImage">
+            {{item.productId.productName}}
+            <br>
+            <span>Quntity: {{item.amount}}</span>
+            <br>
+            {{item.productId.price | currency}}
+            <br>
+            {{item.productId.categoryName.name}}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div (click)="backToCart()">
+
+        <i class="fas fa-arrow-left ">Back To Cart</i>
+
+      </div>
+
+    </div>
+
+    <div class="col col-xs-4 col-sm-8 col-lg-6 orderForm">
+
+      <form class="example-form" #myForm="ngForm">
+
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="select city" required minlength="2" #customerCity="ngModel"
+            [(ngModel)]="customer.city" [value]="customer.city" #city name="city">
+            <mat-option matInput *ngFor="let c of cities" value="{{c.name}}">{{c.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <span *ngIf="customerCity.errors?.required && customerCity.touched">must select a city</span>
+        <span *ngIf="customerCity.errors?.minlength && customerCity.touched">city must be at least 3 character
+          long</span>
+
+        <mat-form-field class="example-full-width street">
+          <input matInput type="text" required minlength="2" placeholder="street" #customerStreet="ngModel"
+            [(ngModel)]="customer.street" [value]="customer.street" #street name="street">
+        </mat-form-field>
+
+        <span *ngIf="customerStreet.errors?.required && customerStreet.touched">Missing Street name.</span>
+        <span *ngIf="customerStreet.errors?.minlength && customerStreet.touched">Street name too short.</span>
+
+        <mat-form-field class="example-full-width houseNumber">
+          <input matInput type="text" placeholder="House Number" required minlength="2" #customerHouseNumber="ngModel"
+            [(ngModel)]="customer.houseNumber" [value]="customer.houseNumber" #houseNumber name="houseNumber">
+        </mat-form-field>
+
+        <span *ngIf="customerHouseNumber.errors?.required && customerHouseNumber.touched">Missing Street.</span>
+        <span *ngIf="customerHouseNumber.errors?.minlength && customerHouseNumber.touched"> Street name is too
+          short.</span>
+
+        <mat-form-field class="example-full-width">
+          <input matInput type="date" required minlength="1" [(ngModel)]="order.houseNumber" placeholder="Shipping Date"
+            #customerDate="ngModel" #date name="date">
+        </mat-form-field>
+
+        <span *ngIf="customerDate.errors?.required && customerDate.touched">Missing house Number.</span>
+        <span *ngIf="customerDate.errors?.minlength && customerDate.touched">house Number is too short.</span>
+
+
+        <p>payments:</p>
+        <hr>
+
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="order.creditCard" type="text" placeholder="Credit Card" required minlength="8"
+            #customerCreditCard="ngModel" #creditCard name="customerCreditCard">
+        </mat-form-field>
+
+        <span *ngIf="customerCreditCard.errors?.required && customerCreditCard.touched">Missing product name.</span>
+        <span *ngIf="customerCreditCard.errors?.minlength && customerCreditCard.touched">Product name too short.</span>
+
+        <div class="example-button-row">
+
+          <button [disabled]="myForm.form.invalid" mat-button color="primary"
+            (click)="sendOrder(creditCard.value, date.value , houseNumber.value , street.value , city.value)">Send
+            Order</button>
+        
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

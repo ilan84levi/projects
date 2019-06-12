@@ -1,0 +1,149 @@
+// flex design
+
+.container {
+  max-width: 95%;
+  margin: 40px auto 0 auto;
+}
+
+.panel {
+  box-sizing: border-box;
+  width: 30%;
+  padding: 3%;
+  border-radius: 2%;
+  flex-basis: 30%;
+  margin-bottom: 5%;
+}
+
+.panel-a {
+  background-color: chartreuse;
+}
+
+.panel-b {
+  background-color: red;
+}
+
+.panel-c {
+  background-color: darkmagenta;
+}
+
+//   // panel b image
+.supermarketImage {
+  background-image: url("src/assets/images/supermarket.jpg");
+  height: 20%;
+  background-position-x: 100%;
+  background-position-y: 100%;
+  background-size: 100%;
+}
+
+//   // panel c image
+.panel-c-supermarketImage {
+  position: relative;
+  left: -10%;
+  background-image: url("src/assets/images/supermarket1.jpg");
+  height: 20%;
+  width: 350px;
+  background-position-x: 100%;
+  background-position-y: 100%;
+  background-size: 100%;
+  margin-left: 20px;
+  padding: 5%;
+}
+
+@media (min-width: 1025px) {
+  .container {
+    flex: 1;
+    display: flex;
+    margin-bottom: 2%;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .panel {
+    flex: 3;
+    display: flex;
+    margin-bottom: 2%;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+
+  .supermarketImage {
+    display: none;
+  }
+
+  .panel-c-supermarketImage {
+    display: none;
+  }
+}
+
+.showForGuest{
+    visibility: visible;
+}
+
+.hideForLoginCustomer{
+    visibility: hidden;
+}
+
+.login-form-hide{
+    visibility: hidden;
+}
+
+.login-form-show{
+    visibility: visible;
+}
+
+.form-default-style{
+    visibility: visible;
+}
+
+// dynamic panel A
+.panel-a-afterLogin{
+    background-color: yellow;
+}
+
+.panel-c-hide-element{
+    visibility: hidden;
+}
+
+.resume-shopping{
+    visibility: visible;
+}
+
+.resume-hide{
+    visibility: hidden;
+}
+
+.startShoppingBtn-hide{
+    visibility: hidden;
+}
+
+.startShopping{
+    visibility: visible;
+}
+
+form > span {
+    color: red;
+    text-align: left;
+    position: absolute;
+    margin: 2px;
+}
+
+.totalPrice-h3{
+    visibility: visible;
+}
+
+.h3-TotalPrice{
+    visibility: hidden;
+}
+
+.h6-dynamicLastOrder{
+    visibility: visible;
+}
+
+.h6-lastorder-hide{
+    visibility: hidden;
+}

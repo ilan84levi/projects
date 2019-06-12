@@ -1,0 +1,47 @@
+<div class="layout-container">
+
+  <div class="addProduct">
+
+    <form #myForm="ngForm">
+
+      <mat-form-field class="example-full-width ">
+        <input NgControl matInput #prName="ngModel" required minlength="2" placeholder="product name" name="productName"
+          [(ngModel)]="product.productName">
+      </mat-form-field>
+
+      <span *ngIf="prName.errors?.required && prName.touched"> Name is required</span>
+      <span *ngIf="prName.errors?.minlength && prName.touched"> Name too short</span>
+
+      <mat-form-field class="example-full-width ">
+        <mat-label>select category</mat-label>
+        <mat-select name="categoryName" #prCategory="ngModel" required minlength="3" [(ngModel)]="product.categoryName">
+          <mat-option *ngFor="let c of categories" [value]="c._id">{{c.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <span *ngIf="prCategory.errors?.required && prCategory.touched"> Category is required</span>
+      <span *ngIf="prCategory.errors?.minlength && prCategory.touched"> Category too short</span>
+
+      <mat-form-field class="example-full-width ">
+        <input type="number" NgControl matInput #prPrice="ngModel" required value="1" min="1" max="1000"
+          placeholder="price" name="price" [(ngModel)]="product.price">
+      </mat-form-field>
+
+      <span *ngIf="prPrice.errors?.required && prPrice.touched"> Price is required</span>
+      <span *ngIf="prPrice.errors?.min && prPrice.touched">1 or more</span>
+      <span *ngIf="priceError">{{priceError}}</span>
+
+      <div class="form-group">
+
+        <input type="file" accept="image/png,image/jpeg" class="form-control-file" (change)="onFileSelected($event)">
+
+      </div>
+
+      <button [disabled]="myForm.form.invalid" type="button" (click)="onUpload()">upload</button>
+
+    </form>
+
+  </div>
+
+</div>

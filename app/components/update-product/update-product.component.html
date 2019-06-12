@@ -1,0 +1,39 @@
+<div class="addProduct">
+
+  <h4 class="h4-update">Update</h4>
+
+  <form *ngIf="productToUpdate" #myForm="ngForm">
+
+    <mat-form-field class="example-full-width ">
+      <input NgControl #prName="ngModel" required min="2" matInput placeholder="{{productToUpdate.productName}}"
+        name="name" [(ngModel)]="product.productName" [value]="productToUpdate.productName">
+    </mat-form-field>
+
+    <span *ngIf="prName.errors?.required && prName.touched"> name is required</span>
+    <span *ngIf="prName.errors?.minlength && prName.touched"> name too short</span>
+
+    <mat-form-field class="example-full-width ">
+      <mat-label>{{productToUpdate.categoryName.name}}</mat-label>
+      <mat-select #prCategory="ngModel" required min="2" name="categoryName" [(ngModel)]="product.categoryName">
+        <mat-option *ngFor="let c of categories" [value]="c._id">{{c.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <span *ngIf="prCategory.errors?.required && prCategory.touched"> Category is required</span>
+    <span *ngIf="prCategory.errors?.minlength && prCategory.touched"> Category too short</span>
+
+    <mat-form-field class="example-full-width ">
+      <input type="number" #prPrice="ngModel" required min="1" max="1000" NgControl matInput name="price"
+        [(ngModel)]="product.price" [value]="productToUpdate.price" placeholder="{{productToUpdate.price}}">
+    </mat-form-field>
+
+    <span *ngIf="prPrice.errors?.required && prPrice.touched"> Price is required</span>
+    <span *ngIf="priceError">{{priceError}}</span>
+
+    <input type="file" class="form-control-file" (change)="onFileSelected($event)">
+    <button [disabled]="myForm.form.invalid" type="button" (click)="onUpload()">upload</button>
+  
+</form>
+
+</div>

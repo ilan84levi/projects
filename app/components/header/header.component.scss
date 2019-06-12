@@ -1,0 +1,105 @@
+//container
+.myHeader {
+  padding: 3%;
+  background-color: #673ab7;
+  display: inline-block;
+  display: flex;
+  width: 100%;
+}
+
+// logo
+.logoImage {
+  background-image: url("/assets/images/shopping-cart-logo.png");
+  width: 50px;
+  height: 50px;
+  background-position-x: 100%;
+  background-position-y: 100%;
+  background-size: 100%;
+  z-index: 5;
+  background-repeat: no-repeat;
+}
+
+// serch Input
+.serchInput {
+  visibility: hidden;
+}
+
+// width max - 600
+@media (max-width: 900px) {
+
+  .logoImage {
+    width: 50px;
+    height: 50px;
+    background-position-x: 100%;
+    background-position-y: 100%;
+    background-size: 100%;
+  }
+
+  .logOut-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 12px;
+  }
+
+  .logOut-btn-container {
+    width: 60px;
+    height: 60px;
+    font-size: 12px;
+  }
+
+}
+
+// header buttons CONTAINER
+.headerButtons {
+  font-family: 'Fugaz One', cursive;
+  flex: 1;
+}
+
+//  2 buttons on header - login and home
+.a-link {
+  margin-left: 5%;
+}
+
+// FOR  dynamic CLASS
+.visible {
+  visibility: visible;
+}
+
+// FOR  dynamic CLASS
+.hidden {
+  visibility: hidden;
+}
+
+
+// h6-customer-wellcome / guest -  container div's
+.h6-customer-wellcome,
+.h6-guest-wellcome {
+  position: relative;
+}
+
+.h6-customer-wellcome {
+  visibility: hidden;
+}
+
+.h6-guest-wellcome {
+  visibility: visible;
+}
+
+//  log out btn container
+.logOut-btn-container {
+  position: relative;
+  right: 40%;
+}
+
+.logOut-btn {
+  visibility: hidden;
+}
+
+.logOut-btn-admin-hidden{
+    visibility: hidden;
+}
+
+
+.logOutAdmin-h6{
+    visibility: visible;
+}

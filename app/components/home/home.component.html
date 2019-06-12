@@ -1,0 +1,86 @@
+<!-- flex design -->
+<div class="container">
+
+  <div class="panel-a panel ">
+
+    <button class="btn btn-info resume-hide" [ngClass]="dynamicResume" (click)="sendToStore()">Resume shopping</button>
+
+    <button class="btn btn-info startShoppingBtn" [ngClass]="dynamicStartShopping" (click)="sendToStore()">Start
+      shopping</button>
+
+    <p class="registered-para" [ngClass]="dynamicClass">Registered?</p>
+
+    <div>
+
+      <span *ngIf="customerEmail.errors?.required && customerEmail.touched">email Input Is Empty</span>
+
+      <span *ngIf="customerEmail.errors?.minlength && customerEmail.touched">email must be at least 4 character
+        long</span><br>
+
+      <span *ngIf="customerPassword.errors?.required && customerPassword.touched">password Input Is Empty</span>
+
+      <span *ngIf="customerPassword.errors?.minlength && customerPassword.touched">password must be at least 4 character
+        long</span>
+
+    </div>
+
+    <form #myForm="ngForm" class="form-default-style" [ngClass]="dynamicClassForm">
+
+      <input required minlength="4" #customerEmail="ngModel" type="text" placeholder="email" class="form-control"
+        [(ngModel)]="customer.email" name="email"><br>
+
+      <input required minlength="4" #customerPassword="ngModel" type="text" placeholder="password" class="form-control"
+        [(ngModel)]="customer.password" name="password"><br>
+
+      <button [disabled]="myForm.form.invalid" class="btn btn-success" (click)="customerLogin()">Login</button>
+
+    </form>
+
+    <a [routerLink]="['register']" [ngClass]="dynamicClass"><b>sign up</b></a>
+
+  </div>
+
+  <div class="panel-b panel">
+
+    <h6>why you should buy in our store?</h6>
+
+    <p>Your online supermarket.
+      Shop fresh. Shop different.
+      Why go to the supermarket when the supermarket can come to you? Browse and shop from thousands of items. From
+      freshly baked morning breads, to late night chocolate cravings, you’ll get it all covered with just a few clicks.
+
+      It’s delivered fresh and fast. A survival plan of sorts! </p>
+
+    <div class="supermarketImage">
+
+    </div>
+
+  </div>
+
+  <div class="panel-c panel" [ngClass]="dynamicPanelCMessages">
+
+    <div class="panel-c-supermarketImage" [ngClass]="dynamicHide">
+
+    </div>
+
+    <div>
+
+      <h6 [ngClass]="dynamicTotalPrice" class="h3-TotalPrice" *ngIf="total">The total price of the cart is: {{total}}
+      </h6>
+
+      <h6 *ngIf="customerCartDate">The cart is from date: {{customerCartDate | date:short }}</h6>
+
+      <h6 *ngIf="lastOrder" class="h6-lastorder-hide" [ngClass]="dynamicLastOrder">your last order: {{lastOrder.date}}
+      </h6>
+
+      <h6 *ngIf="messageForNewCustomer">{{messageForNewCustomer}}</h6>
+
+    </div>
+
+    <h6 [ngClass]="dynamicHide" *ngIf="allProducts">amount of products in our store: {{allProducts.length}} </h6>
+
+    <h6 [ngClass]="dynamicHide" *ngIf="allOrders">amount of orders from our store: {{allOrders.length}}</h6>
+
+  </div>
+
+</div>

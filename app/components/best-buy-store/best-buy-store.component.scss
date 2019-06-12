@@ -1,0 +1,177 @@
+.container-fluid {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background-color: bisque;
+  text-align: center;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 100%;
+}
+
+.mainDiv {
+  grid-column: span 8;
+  background-color: burlywood;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.cartDiv {
+  grid-column: span 4;
+  background-color: gold;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.categoriesNavBar {
+  height: 10%;
+  width: 100%;
+  background-color: cadetblue;
+}
+
+
+.categoriesDiv {
+  display: inline-flex;
+  font-family: 'Indie Flower', cursive;
+
+}
+
+.categories-h5 {
+  margin: 5px;
+  padding: 1px;
+  font-size: 17px;
+}
+
+.productContainer {
+  width: 100%;
+  height: 80%;
+  padding: 2%;
+  margin: 2%;
+  overflow: auto;
+}
+
+.productItem {
+  position: relative;
+  width: 280px;
+  height: 140px;
+  background-color: white;
+  margin: 2px;
+  display: inline-flex;
+  float: left;
+  padding: 3px;
+  z-index: 0;
+}
+
+.productDetails {
+  right: 20%;
+  height: 100%;
+  z-index: 6;
+  font-size: 15px;
+  float: left;
+}
+
+p {
+  text-align: justify;
+  font-size: 15px;
+  display: inline;
+  position: relative;
+  left: 100px;
+  top: -100px;
+}
+
+.productImage {
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+
+
+.itemsContainer {
+  width: 100%;
+  overflow: auto;
+}
+
+.itemAddedDiv {
+  width: 100%;
+  height: 140px;
+  margin-bottom: 2px;
+  background-color: white;
+  opacity: 0.9;
+}
+
+
+.amountPanel {
+  visibility: hidden;
+}
+
+.productItem:hover .amountPanel {
+  position: absolute;
+  visibility: visible;
+  width: 100%;
+  right: 0;
+  height: 50px;
+  bottom: 0;
+  opacity: 0.7;
+  z-index: 3;
+}
+
+.amountInput {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  height: 50px;
+  z-index: 5;
+  background-color: cadetblue;
+  text-align: center;
+  font-size: x-large;
+}
+
+.total-h6 {
+  position: relative;
+  left: -20%;
+}
+
+.orderButton {
+  width: 100%;
+  position: relative;
+}
+
+.deleteIcon {
+  position: sticky;
+  bottom: 230px;
+  z-index: 3;
+  font-size: x-large;
+  color: red;
+  margin-left: 80%;
+}
+
+
+.addBtn {
+  position: absolute;
+  // margin-left: 0;
+  right: 0;
+}
+
+.addItemFas {
+  color: red;
+  font-size: 20px;
+}
+
+
+.amountErrorClass{
+    color: red;
+    z-index: 8;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.deleteAllCart{
+    display: inline;
+}

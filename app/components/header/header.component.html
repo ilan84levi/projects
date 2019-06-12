@@ -1,0 +1,44 @@
+<div class="myHeader">
+
+  <div class="logoImage"> </div>
+
+  <div class="headerButtons">
+
+    <a class="a-link-btn-login a-link" routerLink="/admin">ADMIN-LOGIN</a>
+
+    <a class="a-link-btn-home a-link" routerLink="/home">HOME</a>
+
+    <a [ngClass]="dynamicShopBtn" class="a-link-btn-home a-link" routerLink="/home/shop">SHOP</a>
+
+  </div>
+
+  <div class="serchInput">
+
+    <input type="text" placeholder="SERCH PRODUCT" class="serchInput">
+
+  </div>
+
+
+  <div class="h6-customer-wellcome">
+
+    <h6 [ngClass]="dynamicWellcomeCustomer">HELLO {{currentUser.firstName}} {{currentUser.lastName}}</h6>
+
+  </div>
+
+  <div class="h6-guest-wellcome" [ngClass]="dynamicWellcomeGuest">
+
+    <h6 [ngClass]="dynamicWellcomeGuest">Hello Guest</h6>
+
+  </div>
+
+  <div class="logOut-btn-container logOut-btn">
+
+    <button class="logOut-btn" [ngClass]="dynamicLogOutBtn" type="button" class="btn btn-danger"
+      (click)="logOut()">LOG-OUT</button>
+
+    <button [ngClass]="dynamicLogOutAdminBtn" type="button" class="btn btn-danger logOut-btn-admin"
+      (click)="logOutAdmin()">LOG-OUT ADMIN</button>
+
+  </div>
+
+</div>

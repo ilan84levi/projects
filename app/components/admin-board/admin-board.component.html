@@ -1,0 +1,72 @@
+<div class="admin-panel-container">
+
+  <!-- side-panel-header - add product -->
+  <div class="admin-side-panel" fxFlex="100%" fxFlexAlign="stretch">
+
+    <div class="side-panel-header">
+
+      <div (click)="addProduct()">
+
+        <h3 class="side-panel-h3">ADD PRODUCT</h3>
+
+        <i class="fas fa-plus"></i>
+
+      </div>
+
+      <hr>
+
+      <router-outlet></router-outlet>
+
+    </div>
+
+    <div>
+
+    </div>
+  </div>
+
+  <!-- admin-categories-panel -->
+  <div class="admin-categories-panel" fxFlex="25%">
+
+    <div *ngIf="categories">
+
+      <mat-chip (click)="showAllProducts()" color="primary" selected>all Products</mat-chip>
+
+      <mat-chip-list *ngFor="let c of categories" class="chips-buttons">
+
+        <mat-chip (click)=" changeCategory(c._id)" color="primary" selected>{{c.name}}</mat-chip>
+
+      </mat-chip-list>
+
+    </div>
+
+  </div>
+
+  <!-- products display -->
+  <div class="siteProducts" fxFlex="75%" fxLayout="row" [style.display]="mainProductPage">
+
+    <div class="products-container">
+
+      <div *ngFor="let p of products" class="product-div">
+
+        <div fxFlex="25 ">
+
+          <mat-card class="example-card productCard " (click)="updateProduct(p)">
+            {{p.productName}}
+            <br>
+            <img src="assets/images/{{p.productImage}}" alt="" class="productImage">
+            <br>
+            {{p.price}}$
+            <br>
+            {{p.categoryName.name}}
+
+          </mat-card>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

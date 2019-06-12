@@ -1,0 +1,91 @@
+<h1>sign up now</h1>
+
+<form #myForm="ngForm">
+
+  <div class="example-container">
+
+    <div class="inputsBox">
+
+      <mat-form-field>
+        <input #cufirstName="ngModel" required minlength="2" matInput placeholder="first name"
+          [(ngModel)]="customer.firstName" name="firstName">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input #culastName="ngModel" required minlength="2" matInput placeholder="family name"
+          [(ngModel)]="customer.lastName" name="lastName">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input #cuEmail="ngModel" required minlength="4" matInput placeholder="EMAIL" [(ngModel)]="customer.email"
+          name="email">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input #cuPassword="ngModel" required minlength="4" matInput placeholder="password"
+          [(ngModel)]="customer.password" name="password">
+      </mat-form-field>
+
+    </div>
+
+    <div class="inputsBox">
+
+      <mat-form-field>
+        <input #cuTel="ngModel" required minlength="8" matInput placeholder="TEL" [(ngModel)]="customer.phone"
+          name="phone">
+      </mat-form-field>
+
+      <span *ngIf="cuTel.errors?.required && cuTel.touched"> Name is required</span>
+      <span *ngIf="cuTel.errors?.minlength && cuTel.touched"> Name too short</span>
+
+      <mat-form-field>
+        <mat-select #cuCity="ngModel" required minlength="2" placeholder="select city" [(ngModel)]="customer.city"
+          name="city">
+          <mat-option value="option" *ngFor="let c of cities" [value]="c.name">{{c.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input #cuStreet="ngModel" required matInput placeholder="street" minlength="2" [(ngModel)]="customer.street"
+          name="street">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input #cuHouseNumber="ngModel" required minlength="1" matInput placeholder="house number"
+          [(ngModel)]="customer.houseNumber" name="houseNumber">
+      </mat-form-field>
+
+
+      <br>
+      <button [disabled]="myForm.form.invalid" mat-button class="registerBtn" (click)="register()">register</button>
+
+      <div class="errors-container">
+
+        <span *ngIf="cufirstName.errors?.required && cufirstName.touched"> First Name is required</span>
+        <span *ngIf="cufirstName.errors?.minlength && cufirstName.touched"> First Name too short</span>
+
+        <span *ngIf="culastName.errors?.required && culastName.touched">Last Name is required</span>
+        <span *ngIf="culastName.errors?.minlength && culastName.touched">Last Name too short</span>
+
+        <span *ngIf="cuEmail.errors?.required && cuEmail.touched"> Email is required</span>
+        <span *ngIf="cuEmail.errors?.minlength && cuEmail.touched"> Email too short</span>
+
+        <span *ngIf="cuPassword.errors?.required && cuPassword.touched"> Password is required</span>
+        <span *ngIf="cuPassword.errors?.minlength && cuPassword.touched"> Password too short</span>
+
+        <span *ngIf="cuCity.errors?.required && cuCity.touched"> City is required</span>
+        <span *ngIf="cuCity.errors?.minlength && cuCity.touched"> City too short</span>
+
+        <span *ngIf="cuStreet.errors?.required && cuStreet.touched"> Street is required</span>
+        <span *ngIf="cuStreet.errors?.minlength && cuStreet.touched"> Street too short</span>
+
+        <span *ngIf="cuHouseNumber.errors?.required && cuHouseNumber.touched"> House Number. is required</span>
+        <span *ngIf="cuHouseNumber.errors?.minlength && cuHouseNumber.touched"> House Number. too short</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

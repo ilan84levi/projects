@@ -1,0 +1,119 @@
+<div class="container-fluid">
+
+  <div class="cartDiv">
+
+    <h5>my cart</h5>
+
+    <button *ngIf="items" class="btn btn-danger deleteAllCart" (click)="deleteAllItems()">Delete All</button>
+
+    <hr>
+
+    <div class="cartItems itemsContainer">
+
+      <div *ngFor="let item of items">
+
+        <div class="itemAddedDiv">
+
+          <div class="deleteIcon" (click)="deleteItem(item._id)"><i class="fas fa-times "></i></div>
+
+          <img src="assets/images/{{item.productId.productImage}}" alt="" class="productImage">
+          {{item.productId.productName}}
+          <br>
+          <span>Quntity: {{item.amount}}</span>
+          <br>
+          {{item.productId.price | currency}}
+          <br>
+          {{item.productId.categoryName.name}}
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="totalPriceAndOrderDiv">
+
+      <h6 class="total-h6">Total price:{{totalPrice | currency}}</h6>
+
+      <button type="button" (click)="orderNow()" class="btn btn-success orderButton">ORDER NOW</button>
+
+    </div>
+
+  </div>
+
+  <div class="mainDiv">
+
+    <div class="spinner" *ngIf="!categories">
+      <mat-spinner></mat-spinner>
+    </div>
+
+    <div class="categoriesNavBar col-xs" *ngIf="categories">
+
+      <input type="text" placeholder="serch" #searchInput>
+
+      <button (click)="serchProduct(searchInput.value)" class="btn btn-dark">search</button>
+
+      <div class="categoriesDiv col-xs ">
+
+        <h5 class="categories-h5" (click)="showAllProducts()">all products |</h5>
+
+        <div *ngFor="let c of categories">
+
+          <h5 class="categories-h5" (click)=" changeCategory(c._id)" selected>{{c.name}} |</h5>
+
+        </div>
+
+      </div><br>
+
+      <span *ngIf="amountError" class="amountErrorClass">{{amountError}}</span>
+
+    </div>
+
+    <div class="productContainer">
+
+      <div class="spinner" *ngIf="!products">
+        <mat-spinner></mat-spinner>
+      </div>
+
+      <div *ngFor="let p of products" class="products-div">
+
+        <div class="productItem">
+
+          <span class="addBtn" (click)="addToCart(p)"><i class="fas fa-plus addItemFas"></i></span>
+
+          <div class="amountPanel" *ngIf="item">
+
+            <input class="amountInput" matInput placeholder="choose amount" type="number" name="amount"
+              [(ngModel)]="item.amount" min="1" max="1000">
+
+          </div>
+
+
+          <div (click)="addToCart(p)" class="product">
+
+            <div>
+
+              <img src="assets/images/{{p.productImage}}" alt="" class="productImage">
+
+            </div>
+
+            <div class="productDetails">
+
+              <p>{{p.productName}}</p>
+              <br>
+              <p>{{p.price | currency}}</p>
+              <br>
+              <p> {{p.categoryName.name}}</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
